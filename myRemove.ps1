@@ -1,5 +1,7 @@
 #!/usr/bin/pwsh
 
+
+
 function Write-ListTeams {
     param (
         $account
@@ -14,6 +16,8 @@ function Write-ListTeams {
 }
 
 
+
+
 if (Get-Module -ListAvailable -Name MicrosoftTeams) {
     Write-Host ""
 } 
@@ -24,25 +28,36 @@ else {
 $account = Connect-MicrosoftTeams | Select -ExpandProperty "Account"
 
 $scelta = ""
-while ($scelta -ne 0){
-    $scelta = Read-Host -Prompt "1: Lista Teams`n2: Rimuovi dal team`n0: Esci`n"
-    Write-Host ""
+while ($scelta -ne "exit"){
+    $scelta = Read-Host -Prompt "1: Team list`n2: Remove me from the team`n"
 
 
 if ($scelta -eq 1){
+    # $teams = @(Get-Team -User $account)
+
+    # for ($i = 0; $i -lt $teams.Count; $i++) {
+    #     $teamName = $teams[$i].DisplayName
+    #     Write-Host "$i : $teamName"
+    # }
     Write-ListTeams($account)
 }
 
 if ($scelta -eq 2){
+    $teams = @(Get-Team -User $account)
+
+    # for ($i = 0; $i -lt $teams.Count; $i++) {
+    #     $teamName = $teams[$i].DisplayName
+    #     Write-Host "$i : $teamName"
+    # }
     Write-ListTeams($account)
-    [int]$t = Read-Host -Prompt "Da quale team vuoi essere rimosso?"
+    [int]$t = Read-Host -Prompt "Which team do you want to be removed?"
     $team = $teams[$t].DisplayName
     $group_id = (Get-Team -DisplayName $team).GroupId
     Remove-TeamUser -GroupId $group_id -User $account
 
 }
 
-Write-Host "`n#################################################`n"
+Write-Host "#################################################"
 }
 
 
