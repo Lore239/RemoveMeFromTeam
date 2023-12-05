@@ -4,6 +4,6 @@ Questo script PowerShell è progettato per semplificare il processo di rimozione
 ### Windows
 Apri il file .exe
 
-###MacOS/Linux
+### MacOS / Linux
 1. Installare la powershell (se non ancora fatto)
 2. basta eseguire il comando ```pwsh myRemove.ps1```
