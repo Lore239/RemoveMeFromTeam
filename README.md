@@ -1,5 +1,6 @@
 # Microsoft Teams User Removal
-This PowerShell script is designed to streamline the process of removing a user from Microsoft Teams. It can be used in scenarios where there is a need to quickly manage a user's access to Teams.
+
+This tool has been created to facilitate an otherwise challenging operation, which is the removal from a Microsoft Teams team. With this tool, you can effortlessly exit a team
 ## Istruzioni
 ### Windows
 Open the myRemove.exe (If you dont trust it, just run the powershell script with ```pwsh myRemove.ps1``` in cmd)
@@ -10,7 +11,8 @@ Open the myRemove.exe (If you dont trust it, just run the powershell script with
 
 
 # Rimozione Utente da Microsoft Teams
-Questo script PowerShell è progettato per semplificare il processo di rimozione di un utente da Microsoft Teams. Può essere utilizzato in scenari in cui è necessario gestire rapidamente l'accesso di un utente a Teams.
+
+Questo strumento è stato sviluppato per agevolare un'operazione altrimenti complessa, ovvero la rimozione da un team su Microsoft Teams. Grazie a questo strumento, è possibile uscire da un team in modo semplice e immediato.
 ## Istruzioni
 ### Windows
 Apri il file myRemove.exe
