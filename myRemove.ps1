@@ -1,5 +1,6 @@
 #!/usr/bin/pwsh
 
+
 function Write-ListTeams {
     param (
         $account
@@ -10,7 +11,7 @@ function Write-ListTeams {
         $teamName = $teams[$i].DisplayName
         Write-Host "$i : $teamName"
     }
-
+    return $teams
 }
 
 if (Get-Module -ListAvailable -Name MicrosoftTeams) {
@@ -31,7 +32,7 @@ if ($scelta -eq 1){
 }
 
 if ($scelta -eq 2){
-    Write-ListTeams($account)
+    $teams = Write-ListTeams($account)
     [int]$t = Read-Host -Prompt "Which team do you want to be removed?"
     $team = $teams[$t].DisplayName
     $group_id = (Get-Team -DisplayName $team).GroupId
@@ -41,5 +42,3 @@ if ($scelta -eq 2){
 
 Write-Host "#################################################"
 }
-
-
